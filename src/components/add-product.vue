@@ -1,9 +1,9 @@
 <template>
   <div class="add">
     <div class="add__item">
-      <button class="add__minus">-</button>
-      <div class="add__window">10</div>
-      <button class="add__plus">+</button>
+      <button @click="minus" class="add__minus">-</button>
+      <input v-bind="this.value" :value="this.value" class="add__window" />
+      <button @click="pluss" class="add__plus">+</button>
     </div>
     <div class="add__item">
       <input
@@ -19,7 +19,23 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      value: 0,
+    };
+  },
+  methods: {
+    minus() {
+      if (this.value > 0) {
+        return --this.value;
+      }
+    },
+    pluss() {
+      return ++this.value;
+    },
+  },
+};
 </script>
 
 <style lang='scss'>
@@ -39,13 +55,16 @@ export default {};
   justify-content: center;
 }
 .add__window {
+  display: block;
   width: 64px;
   height: 33px;
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 5px 10px;
   border-radius: 16.5px;
   margin: 0 5px;
 }

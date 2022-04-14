@@ -24,7 +24,8 @@
       />
     </div>
     <div class="form__select">
-      <select value="Вилоятни танланг">
+      <select 
+        class="form__select-elem" value="Вилоятни танланг">
         <option value="1">Тошкент ш.</option>
         <option value="2">Андижон вилояти</option>
         <option value="3">Бухоро вилояти</option>

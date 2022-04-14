@@ -43,6 +43,9 @@
       font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
       
    }
+   button{
+      background: transparent;
+   }
    em{
       font-style: normal;
    }
@@ -54,4 +57,5 @@
    }
    @import 'FormStyle.scss';
    @import 'Simple.scss';
+   @import 'effect.scss';
        

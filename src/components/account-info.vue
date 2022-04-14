@@ -11,8 +11,8 @@
       >
         {{ info.value }}
       </li>
-      <button class="account__theme input input-div">
-        <router-link to="/Profil/Account/Theme">Илова мавзуси</router-link>
+      <button >
+        <router-link class="account__theme input input-div" to="/Profil/Account/Theme">Илова мавзуси</router-link>
       </button>
     </ul>
   </div>
@@ -30,6 +30,7 @@ export default {
 <style lang='scss'>
 .account .input-div {
   &:nth-child(1)::before {
+     height: 23px;
     background: url("@/assets/icons/account_black.svg") center / cover no-repeat;
   }
   &:nth-child(2)::before {
@@ -61,8 +62,6 @@ export default {
 }
 .account__theme {
   display: block;
-  a {
     color: #2c3e50;
-  }
 }
 </style>
