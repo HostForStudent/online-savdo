@@ -1,25 +1,73 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-
+import SingIn from '../views/SingIn.vue'
+import SingUp from '../views/SingUp.vue'
+import Profil from '../views/Profil.vue'
+import Home from '../views/Home.vue'
+import Product from '../views/Product.vue'
+import History from '../views/History.vue'
+import Basket from '../views/Basket.vue'
+import Account from '../views/Account.vue'
+import Theme from '../views/Theme.vue'
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+
+   {
+      path: '/',
+      name: 'SingIn',
+      component: SingIn
+   },
+   {
+      path: '/SingUp',
+      name: 'SingUp',
+      component: SingUp
+   },
+   {
+      path: '/Profil',
+      name: 'Profil',
+      component: Profil,
+      children: [
+         {
+            path: 'Home',
+            name: 'Home',
+            component: Home
+         },
+      ]
+   },
+   {
+      path: '/Profil/Home/:id',
+      name: 'Product',
+      component: Product,
+      props: true,
+   },
+   {
+      path: '/Profil/History',
+      name: 'History',
+      component: History,
+   }, {
+      path: '/Profil/Basket',
+      name: 'Basket',
+      component: Basket,
+   }, {
+      path: '/Profil/Account',
+      name: 'Account',
+      component: Account,
+      children: [
+         {
+            path: 'Theme',
+            name: 'Theme',
+            component: Theme
+         }
+      ]
+   },
+   {
+      path: '/:catchAll(.*)',
+      name: 'SingIn',
+      component: SingIn,
+   }
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
+   history: createWebHistory(process.env.BASE_URL),
+   routes
 })
 
 export default router

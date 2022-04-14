@@ -1,0 +1,32 @@
+
+    
+.container{
+   position: relative;
+}
+.simple{
+   padding:20px 0px 80px 0px;
+   background: radial-gradient(123.4% 57.75% at 50% 23.43%, #F3F3F3 0%, #F7F7FF 100%);
+}
+.simple__arrow {
+   position: absolute;
+   left: 10px;
+   top: 10px;
+}
+.simple__title {
+font-weight: 600;
+font-size: 34px;
+line-height: 38px;
+color:  #2C3E50;
+text-align: center;
+}
+.simple__main {
+padding: 0 5px;
+}
+@media (max-width:568px) {
+   
+.simple__title {
+   
+font-size: 24px;
+line-height: 28px;
+}
+}
