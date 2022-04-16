@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="container__add">
-        <AddProduct />
+        <AddProduct :id="this.id" />
       </div>
       <Nav />
     </div>

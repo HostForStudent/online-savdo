@@ -1,30 +1,43 @@
 @media (min-width:768px) {
    .form__btn,.card__btn,.theme__buy{
-      transition: all .2s;
       &:hover{
          transform: translate(-2px,-2px);
          box-shadow: 2px 2px 5px rgb(11, 49, 143);
       }
+   }
+   .add__plus,.add__minus{
+      &:hover{
+         transition: all .2s;
+         opacity: .5;
+      }
+   }
+   .nav__item img{
+      &:hover{
+         opacity: .9;
+      }
+   }
+   input.form__input,.input-div.input,
+   .input-div>.input,.form__select-elem{
+      &:hover{
+      background:#2c3e5010;
+      }
+   }
+}
+   .form__btn,.card__btn,.theme__buy{
+      transition: all .2s;
       &:active{
          transform: translate(0px,0px);
          box-shadow: 0px 0px 3px rgb(11, 49, 143);
       }
    }
    .add__plus,.add__minus{
-      &:hover{
-         transition: all .2s;
-         opacity: .6;
-      }
       &:active{
          transition: all .2s;
-         opacity: 1;
+         opacity: 0.7;
       }
    }
    .nav__item img{
       transition: all .2s;
-      &:hover{
-         opacity: .9;
-      }
       &:active{
          opacity: .3;
       }
@@ -32,11 +45,14 @@
    input.form__input,.input-div.input,
    .input-div>.input,.form__select-elem{
       transition: all .2s;
-      &:hover{
-      background:#2c3e5010;
-      }
       &:focus{
       background:#2c3e5030;
       }
    }
-}
+   .add__checkbox-btn {
+      transition: all .4s;
+      &:active{
+      background: #2c3e5030;
+      color:#fff;
+      }
+   }

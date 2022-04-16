@@ -1,12 +1,13 @@
 <template>
-  <div v-for="card in cards" :key="card.id" class="card-history">
+<div v-for="card in cards"  :key="card.id">
+  <div class="card-history" v-if="card.addBasket && (card.amount > 0)" >
     <div class="card__body">
       <div class="card-history__icon"></div>
       <div class="card-history__body">
         <div class="card-history__item">
           <h5 class="card__title">{{ card.name }}</h5>
           <em class="card__category">{{ card.category }}</em>
-          <div class="card__price">1 x {{ card.price }}</div>
+          <div class="card__price">{{card.amount}} x {{ card.price }}</div>
         </div>
         <div class="date">
           <div class="date__time">16:56</div>
@@ -16,6 +17,7 @@
       <div class="card-history__price-big">{{ card.price }}</div>
     </div>
   </div>
+</div>
 </template>
 
 <script>

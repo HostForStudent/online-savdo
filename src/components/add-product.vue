@@ -2,37 +2,44 @@
   <div class="add">
     <div class="add__item">
       <button @click="minus" class="add__minus">-</button>
-      <input v-bind="this.value" :value="this.value" class="add__window" />
+      <div class="add__window">{{ this.products[this.id].amount }}</div>
       <button @click="pluss" class="add__plus">+</button>
     </div>
     <div class="add__item">
-      <input
-        type="checkbox"
-        class="add__checkbox"
-        id="adds"
-        name="adds"
-        value="yes"
-      />
-      <label class="add__checkbox-label" for="adds">Қўшиш</label>
+      <button class="add__checkbox-btn" 
+        @click="addBasketFunc"  >
+        <span v-if="!this.products[this.id].addBasket" >Қўшиш</span>
+        <span v-if="this.products[this.id].addBasket" >Қaйтариш</span>
+        </button>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
+  props: ["id"],
+  computed: {
+    ...mapState(["products"]),
+  },
   data() {
     return {
-      value: 0,
+      checked: false,
     };
   },
   methods: {
     minus() {
-      if (this.value > 0) {
-        return --this.value;
+      if (this.products[this.id].amount > 0) {
+        this.products[this.id].amount -= 1;
       }
     },
+    addBasketFunc() {
+      this.checked = !this.checked;
+      this.products[this.id].addBasket = !this.products[this.id].addBasket;
+    },
     pluss() {
-      return ++this.value;
+       console.log(this.checked);
+      this.products[this.id].amount += 1;
     },
   },
 };
@@ -79,6 +86,13 @@ export default {
   justify-content: center;
   line-height: 0;
   font-size: 20px;
+}
+.add__checkbox-btn{
+   font-size: 18px;
+   background: #fff;
+   color: #2c3e50;
+   padding: 3px 10px;
+border-radius: 3px;
 }
 .add__checkbox {
   font-weight: 500;

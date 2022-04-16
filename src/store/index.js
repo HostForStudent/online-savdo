@@ -56,12 +56,12 @@ export default createStore({
          },
       ],
       products: [
-         { id: 0, imgSrc: "product1.jpg", name: "Advan RT whel R18", category: "Ғилдираклар бўлими", price: "47 450 000 cўм", info: "Диски Yokohama ADVAN Racing RT разработаны специально для компактных спортивных автомобилей Mini, Audi и VW. ", },
-         { id: 1, imgSrc: "product2.jpg", name: "Pioneer FH-X380UB", category: "Акустикалар бўлими", price: "1 250 000 cўм", info: "Откройте для себя Pioneer FH-X380UB автомобиль Автомобильные ресиверы. ...", },
-         { id: 2, imgSrc: "product3.jpg", name: "Pride Junior PRO 12", category: "Акустика бўлими", price: "1 400 000 cўм", info: "Классический дизайн и качественные комплектующие от лучших мировых производителей, позволили создать легендарный Pride Junior Pro.", },
-         { id: 3, imgSrc: "product4.jpg", name: "Rays gram 57 (R19)", category: "Ғилдираклар бўлими", price: "32 690 000 cўм", info: "Но выбор пал снова на RAYS GRAM LIGHTS 57Xtreme STD Spec в цвете — Matt Graphite Диаметр R19 ширина 9,5 вылет 35", },
-         { id: 4, imgSrc: "product5.jpg", name: "Rays gram extreme (R19)", category: "Ғилдираклар бўлими", price: "35 450 000 cўм", info: "Суперские, в лимитированном цвете candy red Rays Gram Light 57Xtreme R19 5/100 8,5J ET43 9,5J ET44", },
-         { id: 5, imgSrc: "product6.jpg", name: "Makston Classic (R22)", category: "Ғилдираклар бўлими", price: "51 690 000 cўм", info: "Диски авомобильные Makstton. Makstton Wheels — сильный игрок на рынке Китая, Европы и стран СНГ. ", },
+         { id: 0, imgSrc: "product1.jpg", amount:0, addBasket:false, name: "Advan RT whel R18", category: "Ғилдираклар бўлими", price: "47 450 000 cўм", info: "Диски Yokohama ADVAN Racing RT разработаны специально для компактных спортивных автомобилей Mini, Audi и VW. ", },
+         { id: 1, imgSrc: "product2.jpg", amount:0, addBasket:false, name: "Pioneer FH-X380UB", category: "Акустикалар бўлими", price: "1 250 000 cўм", info: "Откройте для себя Pioneer FH-X380UB автомобиль Автомобильные ресиверы. ...", },
+         { id: 2, imgSrc: "product3.jpg", amount:0, addBasket:false, name: "Pride Junior PRO 12", category: "Акустика бўлими", price: "1 400 000 cўм", info: "Классический дизайн и качественные комплектующие от лучших мировых производителей, позволили создать легендарный Pride Junior Pro.", },
+         { id: 3, imgSrc: "product4.jpg", amount:0, addBasket:false, name: "Rays gram 57 (R19)", category: "Ғилдираклар бўлими", price: "32 690 000 cўм", info: "Но выбор пал снова на RAYS GRAM LIGHTS 57Xtreme STD Spec в цвете — Matt Graphite Диаметр R19 ширина 9,5 вылет 35", },
+         { id: 4, imgSrc: "product5.jpg", amount:0, addBasket:false, name: "Rays gram extreme (R19)", category: "Ғилдираклар бўлими", price: "35 450 000 cўм", info: "Суперские, в лимитированном цвете candy red Rays Gram Light 57Xtreme R19 5/100 8,5J ET43 9,5J ET44", },
+         { id: 5, imgSrc: "product6.jpg", amount:0, addBasket:false, name: "Makston Classic (R22)", category: "Ғилдираклар бўлими", price: "51 690 000 cўм", info: "Диски авомобильные Makstton. Makstton Wheels — сильный игрок на рынке Китая, Европы и стран СНГ. ", },
       ],
       account: [
          { id: 0, value: "Cагатов Жахонгир", },
