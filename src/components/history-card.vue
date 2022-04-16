@@ -14,7 +14,7 @@
           <div class="date__day">04/06/2021</div>
         </div>
       </div>
-      <div class="card-history__price-big">{{ card.price }}</div>
+      <div class="card-history__price-big">{{ Number(card.amount) * Number(parseFloat(card.price.replaceAll(" ",""))) }} cўм</div>
     </div>
   </div>
 </div>
