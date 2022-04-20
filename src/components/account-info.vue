@@ -11,8 +11,11 @@
       >
         {{ info.value }}
       </li>
-      <button >
-        <router-link class="account__theme input input-div" to="/Profil/Account/Theme">Илова мавзуси</router-link>
+      <button @click="func" class="account__theme input input-div">
+        <a
+          
+          >Илова мавзуси</a
+        >
       </button>
     </ul>
   </div>
@@ -20,7 +23,9 @@
 
 <script>
 import { mapState } from "vuex";
+
 export default {
+  props: ["func"],
   computed: {
     ...mapState(["account"]),
   },
@@ -30,10 +35,11 @@ export default {
 <style lang='scss'>
 .account .input-div {
   &:nth-child(1)::before {
-     height: 23px;
+    height: 26px;
     background: url("@/assets/icons/account_black.svg") center / cover no-repeat;
   }
   &:nth-child(2)::before {
+     width: 25px;
     background: url("@/assets/icons/tel.svg") center / cover no-repeat;
   }
   &:nth-child(3)::before {
@@ -62,6 +68,6 @@ export default {
 }
 .account__theme {
   display: block;
-    color: #2c3e50;
+  color: #2c3e50;
 }
 </style>

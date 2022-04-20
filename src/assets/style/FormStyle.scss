@@ -47,7 +47,8 @@ font-size: 16px;
 }
 .form__tel {
    &::before{
-   background: url('@/assets/icons/tel.svg') center / cover no-repeat;
+      width: 25px;
+      background: url('@/assets/icons/tel.svg') center / cover no-repeat;
    }
 }
 .form__passw {

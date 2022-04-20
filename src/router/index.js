@@ -7,7 +7,6 @@ import Product from '../views/Product.vue'
 import History from '../views/History.vue'
 import Basket from '../views/Basket.vue'
 import Account from '../views/Account.vue'
-import Theme from '../views/Theme.vue'
 const routes = [
 
    {
@@ -42,7 +41,8 @@ const routes = [
       path: '/Profil/History',
       name: 'History',
       component: History,
-   }, {
+   },
+   {
       path: '/Profil/Basket',
       name: 'Basket',
       component: Basket,
@@ -50,13 +50,6 @@ const routes = [
       path: '/Profil/Account',
       name: 'Account',
       component: Account,
-      children: [
-         {
-            path: 'Theme',
-            name: 'Theme',
-            component: Theme
-         }
-      ]
    },
    {
       path: '/:catchAll(.*)',

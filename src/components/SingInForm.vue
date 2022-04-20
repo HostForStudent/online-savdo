@@ -43,7 +43,7 @@
 </template>
 
 <script>
-// import  '@/assets/js/selectScript.js';
+import  '@/assets/js/selectScript.js';
 export default {
   computed: {
     singInFunc() {
