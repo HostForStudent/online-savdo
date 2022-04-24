@@ -1,8 +1,9 @@
 <template>
-  <form @submit.prevent="seachForm" class="seach input-div">
-    <input class="input" placeholder="Қидириш" type="text" />
-    <button class="seach__icon"></button>
-  </form>
+  <transition name="search" appear>
+    <form @submit.prevent="seachForm" class="seach input-div">
+      <input class="input" placeholder="Қидириш" type="text" />
+      <button class="seach__icon"></button></form
+  ></transition>
 </template>
 
 <script>

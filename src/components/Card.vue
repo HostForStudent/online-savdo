@@ -1,4 +1,6 @@
 <template>
+
+  <transition-group name='page' appear>
   <div v-for="card in category" :key="card.id" class="card">
     <div class="card__img">
       <img :src="require('@/assets/img/product/' + card.imgSrc)" alt="" />
@@ -18,6 +20,7 @@
       </button>
     </div>
   </div>
+  </transition-group>
 </template>
 
 <script>

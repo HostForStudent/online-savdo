@@ -1,4 +1,5 @@
 <template>
+  <transition name="add" appear>
   <div class="add">
     <div class="add__item">
       <button @click="minus" class="add__minus">-</button>
@@ -12,7 +13,7 @@
         <span v-if="this.products[this.id].addBasket" >Қaйтариш</span>
         </button>
     </div>
-  </div>
+  </div></transition>
 </template>
 
 <script>

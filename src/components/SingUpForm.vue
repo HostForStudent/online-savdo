@@ -1,4 +1,6 @@
 <template>
+
+  <transition name="add" appear>
   <form
     @submit.prevent="SingUpFunc"
     autocomplete="off"
@@ -25,7 +27,8 @@
     </div>
     <div class="form__select">
       <select 
-        class="form__select-elem" value="Вилоятни танланг">
+        class="form__select-elem">
+        <option value="" style="display:none;" disabled selected>Вилоятни танланг</option>
         <option value="1">Тошкент ш.</option>
         <option value="2">Андижон вилояти</option>
         <option value="3">Бухоро вилояти</option>
@@ -68,11 +71,11 @@
       <router-link to="/">Тизимга кириш</router-link>
     </p>
   </form>
+  </transition>
 </template>
 
 <script>
 export default {
-  computed: {},
   computed: {
     SingUpFunc() {
       return this.$router.push({ name: "Home" });

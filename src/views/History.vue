@@ -2,7 +2,9 @@
   <div class="simple">
     <div class="container">
       <BackArrow class="simple__arrow" />
+      <transition name='title' appear>
       <h3 class="simple__title">Тарих</h3>
+      </transition>
       <div class="simple__main">
         <HistoryCard :cards="products" />
       </div>

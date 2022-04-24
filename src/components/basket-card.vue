@@ -1,5 +1,8 @@
 <template>
+
   <div class="basket__cards">
+     
+  <transition-group name='page' appear>
     <div v-for="card in cards" :key="card.id" >
       <div class="card" v-if="card.addBasket">
         <div class="card__img" >
@@ -18,6 +21,7 @@
         </div>
       </div>
     </div>
+  </transition-group>
   </div>
 </template>
 

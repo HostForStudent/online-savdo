@@ -1,4 +1,5 @@
 <template>
+  <transition-group name='page' appear>
 <div v-for="card in cards"  :key="card.id">
   <div class="card-history" v-if="card.addBasket && (card.amount > 0)" >
     <div class="card__body">
@@ -18,6 +19,7 @@
     </div>
   </div>
 </div>
+  </transition-group>
 </template>
 
 <script>

@@ -5,12 +5,16 @@
     </transition>
     <router-view />
     <div class="container">
-      <BackArrow class="simple__arrow" />
-      <button
-        @click="this.$router.push('/SingUp')"
-        class="simple__remove"
-      ></button>
-      <h3 class="simple__title">Шахсий кабинет</h3>
+      <BackArrow class="simple__arrow"/>
+      <transition name="remove" appear>
+        <button
+          @click="this.$router.push('/SingUp')"
+          class="simple__remove"
+        ></button>   
+      </transition>
+      <transition name="title" appear>
+        <h3 class="simple__title">Шахсий кабинет</h3>
+      </transition>
       <div class="simple__main">
         <AccountInfo :func="openModal" />
       </div>
@@ -56,7 +60,7 @@ export default {
 }
 .themeWrapper-enter-active,
 .themeWrapper-leave-active {
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
 .simple__remove {
   position: absolute;
@@ -67,4 +71,5 @@ export default {
   height: 22px;
   background: url("@/assets/icons/pencil.svg") center / cover no-repeat;
 }
+
 </style>

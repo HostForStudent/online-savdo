@@ -1,22 +1,22 @@
 <template>
-  <button @click="backFunc" class="product__arrow"></button>
+  <transition name="arrow" appear>
+    <button @click="backFunc" class="product__arrow"></button>
+  </transition>
 </template>
 
 <script>
 export default {
-
   methods: {
     backFunc() {
       this.$router.go(-1);
     },
   },
-}
+};
 </script>
 
 <style lang='scss'>
-
 .product__arrow {
-   z-index: 5;
+  z-index: 5;
   padding: 8px;
   width: 30px;
   height: 15px;

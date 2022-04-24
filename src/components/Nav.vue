@@ -1,15 +1,17 @@
 <template>
-  <ul class="nav">
-    <li v-for="item in navigator" :key="item.id">
-      <router-link class="nav__item" :to="item.href">
-        <img
-          ref="img"
-          :src="require('../assets/icons/' + item.src)"
-          :alt="item.name"
-        />
-      </router-link>
-    </li>
-  </ul>
+  <transition name="navel" appear>
+    <ul class="nav">
+      <li v-for="item in navigator" :key="item.id">
+        <router-link class="nav__item" :to="item.href">
+          <img
+            ref="img"
+            :src="require('../assets/icons/' + item.src)"
+            :alt="item.name"
+          />
+        </router-link>
+      </li>
+    </ul>
+  </transition>
 </template>
 
 <script>
@@ -33,7 +35,7 @@ export default {
   }
 }
 .nav {
-   z-index: 2;
+  z-index: 2;
   position: fixed;
   left: 50%;
   transform: translateX(-50%);

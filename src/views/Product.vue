@@ -1,30 +1,34 @@
 <template>
-  <div class="product">
-    <div class="container">
-      <h2 class="product__title">
-        <BackArrow />
-        {{ product.name }}
-      </h2>
-      <div class="product__row">
-        <div class="product__img">
-          <img
-            :src="require('@/assets/img/product/' + product.imgSrc)"
-            :alt="product.name"
-          />
+
+    <div class="product">
+      <div class="container">
+        <h2 class="product__title">
+          <BackArrow />
+          {{ product.name }}
+        </h2>
+        
+  <transition name='page' appear>
+        <div class="product__row">
+          <div class="product__img">
+            <img
+              :src="require('@/assets/img/product/' + product.imgSrc)"
+              :alt="product.name"
+            />
+          </div>
+          <div class="product__descr">
+            <h3 class="product__name">{{ product.name }}</h3>
+            <em class="product__category">{{ product.category }}</em>
+            <div class="product__price">{{ product.price }}</div>
+            <div class="product__info">{{ product.info }}</div>
+          </div>
         </div>
-        <div class="product__descr">
-          <h3 class="product__name">{{ product.name }}</h3>
-          <em class="product__category">{{ product.category }}</em>
-          <div class="product__price">{{ product.price }}</div>
-          <div class="product__info">{{ product.info }}</div>
+        </transition>
+        <div class="container__add">
+          <AddProduct :id="this.id" />
         </div>
+        <Nav />
       </div>
-      <div class="container__add">
-        <AddProduct :id="this.id" />
-      </div>
-      <Nav />
     </div>
-  </div>
 </template>
 
 <script>

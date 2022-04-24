@@ -1,22 +1,25 @@
 <template>
   <div class="account">
-    <div class="account__photo">
-      <img src="@/assets/icons/person.svg" alt="foto" />
-    </div>
+    <transition name="account_photo" appear>
+      <div class="account__photo">
+        <img src="@/assets/icons/person.svg" alt="foto" />
+      </div>
+    </transition>
     <ul class="account__info">
-      <li
-        v-for="info in account"
-        :key="info.id"
-        class="account__info-item input input-div"
-      >
-        {{ info.value }}
-      </li>
-      <button @click="func" class="account__theme input input-div">
-        <a
-          
-          >Илова мавзуси</a
+      <transition-group name="page" appear>
+        <li
+          v-for="info in account"
+          :key="info.id"
+          class="account__info-item input input-div"
         >
-      </button>
+          {{ info.value }}
+        </li>
+      </transition-group>
+      <transition name="page" appear>
+        <button @click="func" class="account__theme input input-div">
+          <a>Илова мавзуси</a>
+        </button>
+      </transition>
     </ul>
   </div>
 </template>
@@ -39,7 +42,7 @@ export default {
     background: url("@/assets/icons/account_black.svg") center / cover no-repeat;
   }
   &:nth-child(2)::before {
-     width: 25px;
+    width: 25px;
     background: url("@/assets/icons/tel.svg") center / cover no-repeat;
   }
   &:nth-child(3)::before {

@@ -1,0 +1,87 @@
+//title___________________________________
+/* .title-enter-from{
+   opacity: 0;
+   transform: translateX(-100px);
+} */
+.title-enter-active{
+   animation: title .2s linear;
+}
+@keyframes title {
+   0%{
+   opacity: 0;
+   transform: translate(0px,-60px) scale(.8);
+   }
+   100%{
+      transform: translateX(0) ;
+   }
+}
+
+// arrow-back--------------------
+
+.arrow-enter-from{
+transform: translateX(-100%) scale(.8);
+opacity: 0;
+}
+.arrow-enter-active{
+transition: all .5s ease;
+}
+
+// remove--------------------
+
+.remove-enter-from{
+transform: translateX(100%) scale(.8);
+opacity: 0;
+}
+.remove-enter-active{
+transition: all .5s ease;
+}
+
+//account_photo-------------------
+.account_photo-enter-from{
+   transform: scale(.5) rotate(15deg);
+   opacity: 0;
+   }
+   .account_photo-enter-active{
+   transition: all .7s ease;
+   }
+
+.navel-enter-from,
+.navel-leave-to{
+   transform:translateX(-50%) translateY(10px)  scale(.99);
+   left: 50%;
+   opacity: .8;
+}
+.navel-leave-active,
+.navel-enter-active{
+   transition: all .5s ease;
+}
+
+
+.page-enter-from{
+   transform: translateX(-10%) scale(.9);
+   opacity: .4;
+}
+.page-enter-active{
+   transition: all .5s ease;
+}
+
+.add-enter-from{
+   transform: translateY(40px) scale(.7);
+   opacity: .4;
+}
+.add-enter-active{
+   transition: all .5s ease;
+}
+
+.search-enter-from{
+   position: absolute;
+   left: 50%;
+   top: 0;
+   transform: translate(-50%,-40px) scale(.7);
+   opacity: 0;
+}
+.search-enter-active{
+   position: absolute;
+   transition: all 1s ease;
+}
+
