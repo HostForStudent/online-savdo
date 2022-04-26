@@ -1,17 +1,15 @@
 <template>
-  <SingUpForm/>
+  <SingUpForm />
 </template>
 
 <script>
-import SingUpForm from '../components/SingUpForm.vue'
+import SingUpForm from "../components/SingUpForm.vue";
 export default {
-   components:{
-      
-SingUpForm,
-   }
-}
+  components: {
+    SingUpForm,
+  },
+};
 </script>
 
 <style>
-
 </style>

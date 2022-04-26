@@ -1,58 +1,65 @@
 <template>
   <transition name="add" appear>
-  <form
-    @submit.prevent="singInFunc"
-    autocomplete="off"
-    action="SingIn"
-    class="form"
-  >
-    <transition name="formModal" appear>
-      <FormModal v-if="showModal" />
-    </transition>
-    <h2 class="title">Онлайн Савдо</h2>
-    <h3 class="sub-title">Давом этиш учун тизимга киринг!</h3>
-    <div class="form__tel input-div">
-      <input
-        class="form__input art-stranger"
-        type="tel"
-        placeholder="+998 (--) --- -- --"
-        name="tel"
-      />
-    </div>
-    <div class="form__passw input-div">
-      <input
-        class="form__input"
-        type="password"
-        placeholder="Парол"
-        name="passw"
-      />
-    </div>
-    <div class="form__row">
-      <input
-        type="checkbox"
-        class="custom-checkbox"
-        id="save"
-        name="save"
-        value="yes"
-      />
-      <label for="save">Сақлаш</label>
-      <a href="#" class="form__forgot">Паролни унутдингизми ?</a>
-    </div>
-    <button class="form__btn">КИРИШ</button>
-    <p class="form__sing">
-      Рўйхатдан ўтмаганмисиз?
-      <router-link to="/SingUp">Рўйхатдан ўтиш</router-link>
-    </p>
-  </form>
+    <form
+      @submit.prevent="singInFunc"
+      autocomplete="off"
+      action="SingIn"
+      class="form"
+    >
+      <transition name="formModal" appear>
+        <FormModal v-if="showModal" />
+      </transition>
+      <h2 class="title">Онлайн Савдо</h2>
+      <h3 class="sub-title">Давом этиш учун тизимга киринг!</h3>
+      <div class="form__tel form__input-tel input-div">
+        <input
+          class="form__input phone-input"
+          type="tel"
+          name="tel"
+          id="phone"
+          v-model="tel_numb"
+        />
+      </div>
+      <div class="form__passw form__input-password input-div">
+        <input
+          class="form__input"
+          type="password"
+          placeholder="Парол"
+          name="passw"
+          v-model="password"
+        />
+      </div>
+      <div class="form__row">
+        <input
+          type="checkbox"
+          class="custom-checkbox"
+          id="save"
+          name="save"
+          value="yes"
+        />
+        <label for="save">Сақлаш</label>
+        <a href="#" class="form__forgot">Паролни унутдингизми ?</a>
+      </div>
+      <button class="form__btn">КИРИШ</button>
+      <p class="form__sing">
+        Рўйхатдан ўтмаганмисиз?
+        <router-link to="/SingUp">Рўйхатдан ўтиш</router-link>
+      </p>
+    </form>
   </transition>
 </template>
 
 <script>
 import FormModal from "@/components/Forn-modal.vue";
+import IMask from "imask";
+import { createElementBlock, createElementVNode } from "@vue/runtime-core";
 export default {
   data() {
     return {
       showModal: false,
+      tel_numb: "",
+      tel_obj: "",
+      password: "",
     };
   },
   components: { FormModal },
@@ -64,7 +71,44 @@ export default {
           this.showModal = false;
         }, 3000);
       }
+      let inputValidate = (selector, lengthMax, length) => {
+        const input = document.querySelector(selector);
+        const message = document.createElement("div");
+        message.classList.add("error_mess");
+        if (length < lengthMax) {
+          if (!input.classList.contains("error")) {
+            input.classList.add("error");
+            message.innerHTML = `введите хотя бы ${lengthMax} чисел`;
+            input.after(message);
+          }
+        } else {
+          if (input.classList.contains("error")) {
+            input.classList.remove("error");
+            const message = input.nextElementSibling;
+            message.remove();
+          }
+        }
+      };
+      inputValidate(".form__input-tel", 12, this.tel_obj.unmaskedValue.length);
+      inputValidate(".form__input-password", 4, this.password.length);
     },
+    maskForInput() {
+      const elments = document.querySelectorAll(".phone-input");
+      let tel_numb;
+      for (let index = 0; index < elments.length; index++) {
+        const element = elments[index];
+        tel_numb = IMask(element, {
+          mask: "+{998}(00)000-00-00",
+          lazy: false, // make placeholder always visible
+          placeholderChar: "_", // defaults to '_'
+        });
+      }
+      this.tel_obj = tel_numb;
+      this.tel_numb = tel_numb.value;
+    },
+  },
+  mounted() {
+    this.maskForInput();
   },
 };
 </script>

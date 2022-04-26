@@ -4,9 +4,7 @@
       <Seach />
       <div class="main">
         <div class="cars__cotainer">
-          <transition-group name="page" appear>
             <Card :category="products" />
-          </transition-group>
         </div>
       </div>
     </div>

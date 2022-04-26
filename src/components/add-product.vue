@@ -39,7 +39,6 @@ export default {
       this.products[this.id].addBasket = !this.products[this.id].addBasket;
     },
     pluss() {
-       console.log(this.checked);
       this.products[this.id].amount += 1;
     },
   },
